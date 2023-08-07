@@ -1,6 +1,7 @@
 from flask  import Flask, render_template , request, jsonify
 from flask_cors import CORS
 from flask_pymongo import PyMongo 
+from waitress import serve
 import pprint
 app = Flask(__name__)
 app.config["MONGO_URI"] = "mongodb+srv://mihir72999:Mihir72999@api.tv0cw9w.mongodb.net/data?retryWrites=true&w=majority"
@@ -71,4 +72,4 @@ def contact() :
 
 
 if __name__ == '__main__':
-             app.run()
+             serve(app)
